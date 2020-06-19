@@ -17,7 +17,7 @@ variable "hostname" {
   default     = "debian-small"
 }
 
-# This will create a new SSH key that will show up under the \
+## This will create a new SSH key that will show up under the \
 # Devices>Manage>SSH Keys in the SoftLayer console.
 #resource "ibm_compute_ssh_key" "orpheus_public_key" {
 #  label      = "Orpheus Public Key"
