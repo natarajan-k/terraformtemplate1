@@ -19,10 +19,10 @@ variable "hostname" {
 
 # This will create a new SSH key that will show up under the \
 # Devices>Manage>SSH Keys in the SoftLayer console.
-resource "ibm_compute_ssh_key" "orpheus_public_key" {
-  label      = "Orpheus Public Key"
-  public_key = "${var.public_ssh_key}"
-}
+#resource "ibm_compute_ssh_key" "orpheus_public_key" {
+#  label      = "Orpheus Public Key"
+#  public_key = "${var.public_ssh_key}"
+#}
 
 variable "domain" {
   description = "VM domain"
@@ -43,7 +43,6 @@ resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
   user_metadata            = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only = false
   local_disk               = false
-  ssh_key_ids              = ["${ibm_compute_ssh_key.orpheus_public_key.id}"]
   tags                     = ["${module.camtags.tagslist}"]
 }
 
