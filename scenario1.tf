@@ -31,7 +31,7 @@ variable "domain" {
 # Create a new virtual guest using image "Debian"
 resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
   hostname                 = "${var.hostname}"
-  os_reference_code        = "CENTOS_7_64"
+  os		           = "CENTOS_7_64"
   domain                   = "${var.domain}"
   datacenter               = "${var.datacenter}"
   network_speed            = 100
@@ -40,6 +40,7 @@ resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
   cores                    = 1
   memory                   = 1024
   disks                    = [25]
+  force
   user_metadata            = "{\"value\":\"newvalue\"}"
   tags                     = ["${module.camtags.tagslist}"]
 }
