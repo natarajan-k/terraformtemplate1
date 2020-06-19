@@ -34,15 +34,13 @@ resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
   os_reference_code        = "DEBIAN_8_64"
   domain                   = "${var.domain}"
   datacenter               = "${var.datacenter}"
-  network_speed            = 10
+  network_speed            = 100
   hourly_billing           = true
   private_network_only     = false
   cores                    = 1
   memory                   = 1024
-  disks                    = [25, 10, 20]
+  disks                    = [25]
   user_metadata            = "{\"value\":\"newvalue\"}"
-  dedicated_acct_host_only = false
-  local_disk               = false
   tags                     = ["${module.camtags.tagslist}"]
 }
 
