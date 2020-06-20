@@ -1,4 +1,4 @@
-{
+ {
     "name": "Virtual Server with SSH key",
     "description": "A sample cloud resource template that creates a Debian virtual server and ssh key.",
     "version": "1.0",
